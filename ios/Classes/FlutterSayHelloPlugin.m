@@ -39,12 +39,12 @@ FlutterSayHelloPluginEvent *sayHelloEvent;
       
       [UIDevice currentDevice].batteryMonitoringEnabled = YES;
       double deviceLevel = [UIDevice currentDevice].batteryLevel;
-      
+      int avalue = deviceLevel * 100;
       NSString *message;
       if(deviceLevel<0){
           message = @"请用真机调试哦";
       }else{
-          message = [NSString stringWithFormat:@"你手机电量是%f",deviceLevel];
+          message = [NSString stringWithFormat:@"你手机电量是百分之%d",avalue];
       }
       
       //发送事件
